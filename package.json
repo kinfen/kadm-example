@@ -1,0 +1,18 @@
+{
+  "name": "site",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "express": "4.13.3",
+    "kadm": "0.1.7",
+    "lodash": "4.13.1"
+  },
+  "engines": {
+    "node": ">=0.10.22",
+    "npm": ">=1.3.14"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "main": "index.js"
+}
