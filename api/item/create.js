@@ -2,7 +2,7 @@
  * Created by kinfen on 16/8/30.
  */
 
-var kadm = require( '../../kadm');
+var kadm = require( 'kadm');
 var _ = require('lodash');
 var api = require('../base');
 module.exports = function (req, res){
