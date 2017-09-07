@@ -2,7 +2,7 @@
  * Created by kinfen on 16/5/22.
  */
 var	express = require('express');
-var kadm = require('../kadm');
+var kadm = require('kadm');
 // Setup Route Bindings
 exports = module.exports = function() {
 
