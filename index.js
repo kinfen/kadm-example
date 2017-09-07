@@ -1,6 +1,6 @@
 
 // Require keystone
-var kadm = require('./kadm');
+var kadm = require('kadm');
 
 module.exports = exports = new function()
 {
