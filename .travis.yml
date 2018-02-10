@@ -21,7 +21,6 @@ before_install:
 
 script:
 - npm -v
-- npm i --unsafe-perm=true
 - docker build ./ --tag kinfen/kadm:app_last
 
 
