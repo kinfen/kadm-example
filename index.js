@@ -13,9 +13,9 @@ module.exports = exports = new function()
 	process.env.NODE_ENV=process.env.NODE_ENV || "debug";
 	process.env.PAPERTRAIL_API_TOKEN = process.env.PAPERTRAIL_API_TOKEN || "yucq0bU4ls8XjzBzPQ2";
 	process.env.MONGOLAB_URL=process.env.MONGOLAB_UR||"mongodb://localhost/kadm";
-
+    process.env.PORT = process.env.PORT || 80;
 	kadm.init({
-		"port":	3000
+		"port":	process.env.PORT
 	});
 	kadm.set("routes", require("./routes"));
 	kadm.start();
