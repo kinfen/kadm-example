@@ -1,0 +1,41 @@
+sudo: required
+language: node_js
+python:
+  - "2.7"
+node_js:
+  - "lts/*"
+services:
+  - docker
+
+env:
+  - CC=gcc-4.8
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - gcc-4.8
+
+before_install:
+- docker -v
+
+script:
+- npm -v
+- npm i --unsafe-perm=true
+- docker build ./ --tag kinfen/kadm:app_last
+
+
+after_success:
+- docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+- docker push kinfen/kadm:app_last
+
+
+notifications:
+  webhooks:
+    urls:
+      - http://120.78.62.236:8082
+    on_success: change # default: always
+    on_failure: always # default: always
+    on_start: change   # default: never
+    on_cancel: always # default: always
+    on_error: always # default: always
