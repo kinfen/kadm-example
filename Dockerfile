@@ -1,5 +1,5 @@
 
-FROM kinfen/utils:nodexm
+FROM kinfen/utils-nodexm:latest
 
 MAINTAINER Kinfen
 
