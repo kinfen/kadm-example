@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "express": "4.13.3",
-    "kadm": "0.2.1",
+    "kadm": "0.2.2",
     "lodash": "4.13.1"
   },
   "engines": {
