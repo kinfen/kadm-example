@@ -16,6 +16,7 @@ module.exports = exports = new function()
 	kadm.init({
 		"port":	process.env.PORT,
 		"plugins": [kadmCms],
+
 	});
 	kadm.start();
 };

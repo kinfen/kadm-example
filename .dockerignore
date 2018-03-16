@@ -1,3 +1,4 @@
 kadm
 keystone
 Dockerfile
+*.code-workspace

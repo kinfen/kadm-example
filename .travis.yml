@@ -9,6 +9,8 @@ services:
 
 env:
   - CC=gcc-4.8
+  - NODE_ENV=production
+  - process.env.NODE_ENV=production
 addons:
   apt:
     sources:
