@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {
     "express": "4.13.3",
-    "kadm": "^0.3.2",
-    "kadm-plugin-cms": "0.3.2",
+    "kadm": "latest",
+    "kadm-plugin-cms": "latest",
     "lodash": "4.13.1",
     "path": "^0.12.7"
   },
