@@ -18,6 +18,7 @@ module.exports = exports = new function()
 		"plugins": [kadmCms],
 
 	});
+	kadm.set("routes", require("./routes"));
 	kadm.start();
 };
 
