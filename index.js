@@ -11,7 +11,7 @@ module.exports = exports = new function()
 	process.env.MANDRILL_USERNAME=process.env.MANDRILL_USERNAME||"app31974532@heroku.com";
 	process.env.NODE_ENV=process.env.NODE_ENV || "debug";
 	process.env.PAPERTRAIL_API_TOKEN = process.env.PAPERTRAIL_API_TOKEN || "yucq0bU4ls8XjzBzPQ2";
-	process.env.MONGOD_URL=process.env.MONGOD_URL||"mongodb://localhost/kadm";
+	process.env.MONGOLAB_URL=process.env.MONGOD_URL||"mongodb://localhost/kadm";
     process.env.PORT = process.env.PORT || 3000;
 	kadm.init({
 		"port":	process.env.PORT,
