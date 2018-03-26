@@ -2,6 +2,7 @@
 // Require keystone
 var kadm = require('kadm');
 var kadmCms = require('kadm-plugin-cms');
+// var kadmwxapp = require('kadm-plugin-wxapp');
 module.exports = exports = new function()
 {
 	process.env.CLOUDINARY_URL=process.env.CLOUDINARY_URL||"cloudinary://247181424266945:cHUwYyEGRV7WH_8bdjTmkydGP7c@hwqie6qjg";
@@ -12,13 +13,14 @@ module.exports = exports = new function()
 	process.env.MANDRILL_USERNAME=process.env.MANDRILL_USERNAME||"app31974532@heroku.com";
 	process.env.NODE_ENV=process.env.NODE_ENV || "debug";
 	process.env.PAPERTRAIL_API_TOKEN = process.env.PAPERTRAIL_API_TOKEN || "yucq0bU4ls8XjzBzPQ2";
-	process.env.MONGOLAB_URL=process.env.MONGOLAB_UR||"mongodb://localhost/kadm";
+	process.env.MONGOLAB_URL=process.env.MONGOLAB_URL || "mongodb://localhost/kadm";
     process.env.PORT = process.env.PORT || 3000;
 	kadm.init({
 		"port":	process.env.PORT,
 		"plugins": [kadmCms],
 
 	});
+	kadm.set("routes", require("./routes"));
 	kadm.start();
 };
 
