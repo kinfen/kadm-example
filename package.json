@@ -1,11 +1,12 @@
 {
   "name": "kadm-example",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "private": true,
   "dependencies": {
     "express": "4.13.3",
     "kadm": "latest",
     "kadm-plugin-cms": "latest",
+    "kadm-plugin-wxapp": "latest",
     "lodash": "4.13.1",
     "path": "^0.12.7"
   },

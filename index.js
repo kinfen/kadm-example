@@ -2,7 +2,7 @@
 // Require keystone
 var kadm = require('kadm');
 var kadmCms = require('kadm-plugin-cms');
-// var kadmwxapp = require('kadm-plugin-wxapp');
+var kadmwxapp = require('kadm-plugin-wxapp');
 module.exports = exports = new function()
 {
 	process.env.CLOUDINARY_URL=process.env.CLOUDINARY_URL||"cloudinary://247181424266945:cHUwYyEGRV7WH_8bdjTmkydGP7c@hwqie6qjg";
@@ -17,7 +17,7 @@ module.exports = exports = new function()
     process.env.PORT = process.env.PORT || 3000;
 	kadm.init({
 		"port":	process.env.PORT,
-		"plugins": [kadmCms],
+		"plugins": [kadmCms,kadmwxapp],
 
 	});
 	kadm.set("routes", require("./routes"));
