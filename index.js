@@ -8,7 +8,6 @@ module.exports = exports = new function()
 	process.env.CLOUDINARY_URL=process.env.CLOUDINARY_URL||"cloudinary://247181424266945:cHUwYyEGRV7WH_8bdjTmkydGP7c@hwqie6qjg";
 	process.env.COOKIE_SECRET=process.env.COOKIE_SECRET||"99422c0d14bdc450d124958ba098d3bed10e8bdc537781d654e7a4bdbddb20ca";
 	process.env.EMAIL_HOSTNAME="";
-	process.env.NODE_DEV=process.env.NODE_DEV || "debug";
 	process.env.MANDRILL_APIKEY=process.env.MANDRILL_APIKEY||"MJBMvNWAZCSKUNHxHC1vAA";
 	process.env.MANDRILL_USERNAME=process.env.MANDRILL_USERNAME||"app31974532@heroku.com";
 	process.env.NODE_ENV=process.env.NODE_ENV || "debug";
@@ -17,7 +16,7 @@ module.exports = exports = new function()
     process.env.PORT = process.env.PORT || 3000;
 	kadm.init({
 		"port":	process.env.PORT,
-		"plugins": [kadmCms,kadmwxapp],
+		"plugins": [kadmCms, kadmwxapp],
 
 	});
 	kadm.set("routes", require("./routes"));
