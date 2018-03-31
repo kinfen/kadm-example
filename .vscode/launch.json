@@ -8,6 +8,9 @@
         {
             "type": "node",
             "request": "launch",
+            "env": {
+                "NODE_DEV":"debug",
+            },
             "name": "Launch Program",
             "program": "${workspaceFolder}/index.js"
         }
