@@ -13,11 +13,22 @@ module.exports = exports = new function()
 	process.env.NODE_ENV=process.env.NODE_ENV || "debug";
 	process.env.PAPERTRAIL_API_TOKEN = process.env.PAPERTRAIL_API_TOKEN || "yucq0bU4ls8XjzBzPQ2";
 	process.env.MONGOLAB_URL=process.env.MONGOLAB_URL || "mongodb://localhost/kadm";
+	// process.env.REDIS_HOST=process.env.REDIS_HOST || 'localhost';
+	// process.env.REDIS_PORT=process.env.REDIS_PORT || 6379;
+	process.env.REDIS_URL=process.env.REDIS_URL || "redis://localhost:6379/1";
     process.env.PORT = process.env.PORT || 3000;
 	kadm.init({
 		"port":	process.env.PORT,
 		"plugins": [kadmCms, kadmwxapp],
-
+		"site-statics": __dirname + '/public',
+		'session store': 'redis',
+		'session store options':{
+			// "host": "localhost", // Redis服务器主机名
+			// "port": 6379, // Redis服务器端口
+			"ttl": 86400,
+			"prefix": "kadm:", // Key前缀默认为"sess:"
+			"url": process.env.REDIS_URL, // 比如 redis://user:pass@host:port/db
+		}
 	});
 	kadm.set("routes", require("./routes"));
 	kadm.start();

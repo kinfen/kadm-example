@@ -9,6 +9,6 @@ var kadm = require('kadm');
 
 exports = module.exports = function() {
 	var routes = express.Router();
-	routes.use(express.static(path.join(__dirname, "..", kadm.get('static'))));
+	// routes.use(express.static(path.join(__dirname, "..", kadm.get('static'))));
 	return routes;
 };
