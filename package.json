@@ -1,6 +1,6 @@
 {
   "name": "kadm-example",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": true,
   "dependencies": {
     "express": "4.13.3",
