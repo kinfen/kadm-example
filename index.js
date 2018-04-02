@@ -24,13 +24,13 @@ module.exports = exports = new function()
 		"plugins": [kadmCms, kadmwxapp],
 		"site-statics": __dirname + '/public',
 		'session store': process.env.SESSION_STORE,
-		'session store options':{
+		'session store options':process.env.SESSION_STORE === 'redis' ? {
 			// "host": "localhost", // Redis服务器主机名
 			// "port": 6379, // Redis服务器端口
 			"ttl": 86400,
 			"prefix": "kadm:", // Key前缀默认为"sess:"
 			"url": process.env.REDIS_URL, // 比如 redis://user:pass@host:port/db
-		}
+		} : {}
 	});
 	kadm.set("routes", require("./routes"));
 	kadm.start();
