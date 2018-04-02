@@ -23,7 +23,7 @@ module.exports = exports = new function()
 		"port":	process.env.PORT,
 		"plugins": [kadmCms, kadmwxapp],
 		"site-statics": __dirname + '/public',
-		'session store': SESSION_STORE,
+		'session store': process.env.SESSION_STORE,
 		'session store options':{
 			// "host": "localhost", // Redis服务器主机名
 			// "port": 6379, // Redis服务器端口
