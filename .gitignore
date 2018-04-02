@@ -2,3 +2,4 @@ kadm
 kadm-acl
 kadm-rbac
 keystone
+public/uploads/*
