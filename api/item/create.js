@@ -12,23 +12,39 @@ module.exports = function (req, res){
 	var action = data.action;
 	var item = list.model();
 	var data = _.assignIn({}, req.body, req.files);
-	list.validateInput(item, data, function (err) {
+	var updateData = _.assign({}, data, req.files);
+
+	list.updateItem(item, updateData, function (err) {
 		if (err) {
-			api.error(res,  err);
-			return;
+			console.log(err);
+			api.error(res, err);
+		} else {
+			api.json(res, {
+				status:1,
+				info:{
+					item:list.getData(item)
+				}
+			});
 		}
-		list.updateItem(item, data, function (err) {
-			if (err) {
-				console.log(err);
-				api.error(res, err);
-			} else {
-				api.json(res, {
-					status:1,
-					info:{
-						item:list.getData(item)
-					}
-				});
-			}
-		});
 	});
+
+	// list.validateInput(item, data, function (err) {
+	// 	if (err) {
+	// 		api.error(res,  err);
+	// 		return;
+	// 	}
+	// 	list.updateItem(item, data, function (err) {
+	// 		if (err) {
+	// 			console.log(err);
+	// 			api.error(res, err);
+	// 		} else {
+	// 			api.json(res, {
+	// 				status:1,
+	// 				info:{
+	// 					item:list.getData(item)
+	// 				}
+	// 			});
+	// 		}
+	// 	});
+	// });
 }

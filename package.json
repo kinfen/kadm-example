@@ -8,6 +8,7 @@
     "kadm-plugin-cms": "latest",
     "kadm-plugin-wxapp": "latest",
     "kadm-plugin-wx": "latest",
+    "kadm-plugin-mall": "latest",
     "lodash": "4.13.1",
     "path": "^0.12.7"
   },
