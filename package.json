@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "express": "4.13.3",
-    "kadm": "latest",
+    "kadm": "0.5.4",
     "kadm-plugin-cms": "latest",
     "kadm-plugin-wxapp": "latest",
     "kadm-plugin-wx": "latest",
