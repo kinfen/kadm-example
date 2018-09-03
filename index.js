@@ -4,7 +4,7 @@ var kadm = require('kadm');
 var kadmCms = require('kadm-plugin-cms');
 var kadmwxapp = require('kadm-plugin-wxapp');
 var kadmwx = require('kadm-plugin-wx');
-var mall = require('kadm-plugin-mall');
+// var mall = require('kadm-plugin-mall');
 module.exports = exports = new function()
 {
 	// process.env.CLOUDINARY_URL=process.env.CLOUDINARY_URL||"cloudinary://247181424266945:cHUwYyEGRV7WH_8bdjTmkydGP7c@hwqie6qjg";
@@ -21,7 +21,12 @@ module.exports = exports = new function()
     process.env.PORT = process.env.PORT || 3000;
 	kadm.init({
 		"port":	process.env.PORT,
-		"plugins": [kadmCms, kadmwxapp, kadmwx, mall],
+		"plugins": [
+			kadmCms,
+			kadmwxapp,
+			kadmwx,
+			// mall
+		],
 		"site-statics": __dirname + '/public',
 		'session store': process.env.SESSION_STORE,
 
