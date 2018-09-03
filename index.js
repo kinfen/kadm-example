@@ -24,7 +24,7 @@ module.exports = exports = new function()
 		"plugins": [
 			kadmCms,
 			kadmwxapp,
-			kadmwx,
+			kadmwx
 			// mall
 		],
 		"site-statics": __dirname + '/public',
