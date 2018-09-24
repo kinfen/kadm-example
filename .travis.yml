@@ -20,7 +20,7 @@ before_install:
 - docker -v
 
 script:
-- npm -v
+- npm i --registry=www.kstudio.top:7001
 - docker build ./ --tag kinfen/kadm:app_last
 
 

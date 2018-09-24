@@ -4,11 +4,11 @@
   "private": true,
   "dependencies": {
     "express": "4.13.3",
-    "kadm": "latest",
-    "kadm-plugin-cms": "latest",
-    "kadm-plugin-wxapp": "latest",
-    "kadm-plugin-wx": "latest",
-    "kadm-plugin-mall": "latest",
+    "@kstudio/kadm": "latest",
+    "@kstudio/kadm-plugin-cms": "latest",
+    "@kstudio/kadm-plugin-wxapp": "latest",
+    "@kstudio/kadm-plugin-wx": "latest",
+    "@kstudio/kadm-plugin-mall": "latest",
     "lodash": "4.13.1",
     "path": "^0.12.7"
   },
