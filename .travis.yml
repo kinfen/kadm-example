@@ -18,8 +18,8 @@ addons:
 
 before_install:
 - docker -v
-script:
 - npm i --registry=www.kstudio.top:7001
+script:
 - docker build ./ --tag kinfen/kadm:app_last
 
 
