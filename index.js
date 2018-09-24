@@ -21,7 +21,12 @@ module.exports = exports = new function()
     process.env.PORT = process.env.PORT || 3000;
 	kadm.init({
 		"port":	process.env.PORT,
-		"plugins": [kadmCms, kadmwxapp, kadmwx, mall],
+		"plugins": [
+			kadmCms,
+			kadmwxapp,
+			kadmwx,
+			mall
+		],
 		"site-statics": __dirname + '/public',
 		'session store': process.env.SESSION_STORE,
 

@@ -18,6 +18,7 @@ addons:
 
 before_install:
 - docker -v
+- npm i
 
 script:
 - npm i --registry=www.kstudio.top:7001
@@ -32,7 +33,7 @@ after_success:
 notifications:
   webhooks:
     urls:
-      - http://120.78.62.236:8082
+      - http://www.kstudio.top:8082
     on_success: always # default: always
     on_failure: always # default: always
     on_start: never   # default: never
