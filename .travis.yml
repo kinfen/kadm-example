@@ -18,16 +18,14 @@ addons:
 
 before_install:
 - docker -v
-- npm i
-
 script:
 - npm i --registry=www.kstudio.top:7001
 - docker build ./ --tag kinfen/kadm:app_last
 
 
 after_success:
-- docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-- docker push kinfen/kadm:app_last
+- docker login -u $YUN_USERNAME -p $YUN_PASSWORD
+- docker push registry.cn-shenzhen.aliyuncs.com/kstudio/kadm:app_last
 
 
 notifications:
