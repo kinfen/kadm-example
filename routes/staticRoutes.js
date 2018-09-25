@@ -5,7 +5,7 @@
 
 var	express = require('express');
 var path = require('path');
-var kadm = require('kadm');
+var kadm = require('@kstudio/kadm');
 
 exports = module.exports = function() {
 	var routes = express.Router();

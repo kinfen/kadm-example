@@ -1,10 +1,10 @@
 
 // Require keystone
-var kadm = require('kadm');
-var kadmCms = require('kadm-plugin-cms');
-var kadmwxapp = require('kadm-plugin-wxapp');
-var kadmwx = require('kadm-plugin-wx');
-var mall = require('kadm-plugin-mall');
+var kadm = require('@kstudio/kadm');
+var kadmCms = require('@kstudio/kadm-plugin-cms');
+var kadmwxapp = require('@kstudio/kadm-plugin-wxapp');
+var kadmwx = require('@kstudio/kadm-plugin-wx');
+var mall = require('@kstudio/kadm-plugin-mall');
 module.exports = exports = new function()
 {
 	// process.env.CLOUDINARY_URL=process.env.CLOUDINARY_URL||"cloudinary://247181424266945:cHUwYyEGRV7WH_8bdjTmkydGP7c@hwqie6qjg";
