@@ -24,7 +24,7 @@ script:
 
 
 after_success:
-- docker login -u $YUN_USERNAME -p $YUN_PASSWORD
+- docker login --username=$YUN_USERNAME --password=$YUN_PASSWORD registry.cn-shenzhen.aliyuncs.com
 - docker push registry.cn-shenzhen.aliyuncs.com/kstudio/kadm:app_last
 
 
