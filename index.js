@@ -43,9 +43,8 @@ module.exports = exports = new function()
 			"url": process.env.REDIS_URL, // 比如 redis://user:pass@host:port/db
 		} : {}
 	});
-	// kadm.import('models');
+	kadm.import(path.join(__dirname, 'models'));
 	kadm.set("routes", require("./routes"));
-	// kadm.set("models", path.resolve('models'));
 	var count = 0;
 	var io;
 	kadm.start({
