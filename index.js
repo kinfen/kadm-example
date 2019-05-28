@@ -5,6 +5,8 @@ var kadmCms = require('@kstudio/kadm-plugin-cms');
 var kadmwxapp = require('@kstudio/kadm-plugin-wxapp');
 var kadmwx = require('@kstudio/kadm-plugin-wx');
 var mall = require('@kstudio/kadm-plugin-mall');
+var ci = require('@kstudio/kadm-plugin-ci');
+var path = require('path');
 module.exports = exports = new function()
 {
 	// process.env.CLOUDINARY_URL=process.env.CLOUDINARY_URL||"cloudinary://247181424266945:cHUwYyEGRV7WH_8bdjTmkydGP7c@hwqie6qjg";
@@ -16,7 +18,8 @@ module.exports = exports = new function()
 	// process.env.PAPERTRAIL_API_TOKEN = process.env.PAPERTRAIL_API_TOKEN || "yucq0bU4ls8XjzBzPQ2";
 	process.env.MONGOLAB_URL=process.env.MONGOLAB_URL || "mongodb://localhost/kadm";
 
-	process.env.SESSION_STORE=process.env.SESSION_STORE || "mongo"
+	process.env.SESSION_STORE=process.env.SESSION_STORE || "mongo";
+	process.env.AMAP_KEY=process.env.AMAP_KEY || "f54f9335180c9b9e415cd81b79e80646";
 	process.env.REDIS_URL=process.env.REDIS_URL || "redis://localhost/1";
     process.env.PORT = process.env.PORT || 3000;
 	kadm.init({
@@ -25,7 +28,8 @@ module.exports = exports = new function()
 			kadmCms,
 			kadmwxapp,
 			kadmwx,
-			mall
+			mall,
+			ci,
 		],
 		"site-statics": __dirname + '/public',
 		'session store': process.env.SESSION_STORE,
@@ -41,8 +45,30 @@ module.exports = exports = new function()
 			"url": process.env.REDIS_URL, // 比如 redis://user:pass@host:port/db
 		} : {}
 	});
-	// kadm.import('models');
+	kadm.import(path.join(__dirname, 'models'));
 	kadm.set("routes", require("./routes"));
-	kadm.start({});
+	var count = 0;
+	var io;
+	kadm.start({
+		onStart:() => {
+			var http = kadm.getAdminPlus().httpServer
+			io = require('socket.io')(4000, {
+				transports:'polling'
+			});
+			console.log('ready for socket:');
+			io.on('connection', (socket) => {
+				console.log('a user ' + count++ +' connected');
+				socket.on('msg', function(msg){
+					socket.emit('msg',"server:" + msg);
+				});
+				socket.on('disconnect', (reason) => {
+					console.log("reason:" + reason);
+				});
+				socket.on('error', (error) => {
+					console.log("error:" + error);
+				  });
+			})
+		}
+	});
 };
 
