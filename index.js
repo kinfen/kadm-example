@@ -5,6 +5,7 @@ var kadmCms = require('@kstudio/kadm-plugin-cms');
 var kadmwxapp = require('@kstudio/kadm-plugin-wxapp');
 var kadmwx = require('@kstudio/kadm-plugin-wx');
 var mall = require('@kstudio/kadm-plugin-mall');
+var ci = require('@kstudio/kadm-plugin-ci');
 var path = require('path');
 module.exports = exports = new function()
 {
@@ -27,7 +28,8 @@ module.exports = exports = new function()
 			kadmCms,
 			kadmwxapp,
 			kadmwx,
-			mall
+			mall,
+			ci,
 		],
 		"site-statics": __dirname + '/public',
 		'session store': process.env.SESSION_STORE,
