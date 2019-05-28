@@ -43,6 +43,6 @@ module.exports = exports = new function()
 	});
 	// kadm.import('models');
 	kadm.set("routes", require("./routes"));
-	kadm.start();
+	kadm.start({});
 };
 
