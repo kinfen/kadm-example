@@ -8,6 +8,7 @@
     "@kstudio/kadm-plugin-mall": "latest",
     "@kstudio/kadm-plugin-wx": "latest",
     "@kstudio/kadm-plugin-wxapp": "latest",
+    "@kstudio/kadm-plugin-ci": "latest",
     "express": "4.13.3",
     "lodash": "4.13.1",
     "path": "^0.12.7",
