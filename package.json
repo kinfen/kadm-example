@@ -1,9 +1,9 @@
 {
   "name": "kadm-example",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "private": true,
   "dependencies": {
-    "@kstudio/kadm": "0.7.6",
+    "@kstudio/kadm": "latest",
     "@kstudio/kadm-plugin-cms": "latest",
     "@kstudio/kadm-plugin-mall": "latest",
     "@kstudio/kadm-plugin-wx": "latest",
