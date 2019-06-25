@@ -3,7 +3,7 @@
   "version": "0.1.14",
   "private": true,
   "dependencies": {
-    "@kstudio/kadm": "latest",
+    "@kstudio/kadm": "0.7.6",
     "@kstudio/kadm-plugin-cms": "latest",
     "@kstudio/kadm-plugin-mall": "latest",
     "@kstudio/kadm-plugin-wx": "latest",

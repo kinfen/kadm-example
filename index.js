@@ -52,22 +52,22 @@ module.exports = exports = new function()
 	kadm.start({
 		onStart:() => {
 			var http = kadm.getAdminPlus().httpServer
-			io = require('socket.io')(4000, {
-				transports:'polling'
-			});
-			console.log('ready for socket:');
-			io.on('connection', (socket) => {
-				console.log('a user ' + count++ +' connected');
-				socket.on('msg', function(msg){
-					socket.emit('msg',"server:" + msg);
-				});
-				socket.on('disconnect', (reason) => {
-					console.log("reason:" + reason);
-				});
-				socket.on('error', (error) => {
-					console.log("error:" + error);
-				  });
-			})
+			// io = require('socket.io')(4000, {
+			// 	transports:'polling'
+			// });
+			// console.log('ready for socket:');
+			// io.on('connection', (socket) => {
+			// 	console.log('a user ' + count++ +' connected');
+			// 	socket.on('msg', function(msg){
+			// 		socket.emit('msg',"server:" + msg);
+			// 	});
+			// 	socket.on('disconnect', (reason) => {
+			// 		console.log("reason:" + reason);
+			// 	});
+			// 	socket.on('error', (error) => {
+			// 		console.log("error:" + error);
+			// 	  });
+			// })
 		}
 	});
 };
