@@ -5,7 +5,7 @@ var kadmCms = require('@kstudio/kadm-plugin-cms');
 var kadmwxapp = require('@kstudio/kadm-plugin-wxapp');
 var kadmwx = require('@kstudio/kadm-plugin-wx');
 var mall = require('@kstudio/kadm-plugin-mall');
-var ci = require('@kstudio/kadm-plugin-ci');
+// var ci = require('@kstudio/kadm-plugin-ci');
 var path = require('path');
 module.exports = exports = new function()
 {
@@ -14,9 +14,9 @@ module.exports = exports = new function()
 	// process.env.EMAIL_HOSTNAME="";
 	// process.env.MANDRILL_APIKEY=process.env.MANDRILL_APIKEY||"MJBMvNWAZCSKUNHxHC1vAA";
 	// process.env.MANDRILL_USERNAME=process.env.MANDRILL_USERNAME||"app31974532@heroku.com";
-	process.env.NODE_ENV=process.env.NODE_ENV || "debug";
+	process.env.NODE_ENV=process.env.NODE_ENV || "production"; // "debug";
 	// process.env.PAPERTRAIL_API_TOKEN = process.env.PAPERTRAIL_API_TOKEN || "yucq0bU4ls8XjzBzPQ2";
-	process.env.MONGOLAB_URL=process.env.MONGOLAB_URL || "mongodb://localhost/kadm";
+	process.env.MONGOLAB_URL=process.env.MONGOLAB_URL || "mongodb://kinfen:deadkill@localhost/kadm?authSource=admin";
 
 	process.env.SESSION_STORE=process.env.SESSION_STORE || "mongo";
 	process.env.AMAP_KEY=process.env.AMAP_KEY || "f54f9335180c9b9e415cd81b79e80646";
@@ -29,7 +29,6 @@ module.exports = exports = new function()
 			kadmwxapp,
 			kadmwx,
 			mall,
-			ci,
 		],
 		"site-statics": __dirname + '/public',
 		'session store': process.env.SESSION_STORE,
@@ -47,8 +46,10 @@ module.exports = exports = new function()
 	});
 	kadm.import(path.join(__dirname, 'models'));
 	kadm.set("routes", require("./routes"));
-	var count = 0;
-	var io;
+	// "@kstudio/kadm-plugin-cms": "../kadm-plugin-cms",
+    // "@kstudio/kadm-plugin-mall": "../kadm-plugin-mall",
+    // "@kstudio/kadm-plugin-wx": "../kadm-plugin-wx",
+    // "@kstudio/kadm-plugin-wxapp": "../kadm-plugin-wxapp",
 	kadm.start({
 		onStart:() => {
 			var http = kadm.getAdminPlus().httpServer

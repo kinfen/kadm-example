@@ -1,8 +1,7 @@
 
 var kadm = require('@kstudio/kadm')
-var keystone = kadm.getAdminPlus();
-var Types = kadm.Field.Types;
-var TestRecord = new keystone.List('TestRecord');
+var Types = require('@kstudio/kadm-fields/FieldTypes');
+var TestRecord = new kadm.List('TestRecord');
 TestRecord.add({
 	name: { label:"名称", type: String, required: true, initial:true},
 	num:{label:"number", type:Number},
