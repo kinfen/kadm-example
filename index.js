@@ -14,7 +14,7 @@ module.exports = exports = new function()
 	// process.env.EMAIL_HOSTNAME="";
 	// process.env.MANDRILL_APIKEY=process.env.MANDRILL_APIKEY||"MJBMvNWAZCSKUNHxHC1vAA";
 	// process.env.MANDRILL_USERNAME=process.env.MANDRILL_USERNAME||"app31974532@heroku.com";
-	process.env.NODE_ENV=process.env.NODE_ENV || "production"; // "debug";
+	process.env.NODE_ENV=process.env.NODE_ENV || /* "production"; */  "debug";
 	// process.env.PAPERTRAIL_API_TOKEN = process.env.PAPERTRAIL_API_TOKEN || "yucq0bU4ls8XjzBzPQ2";
 	process.env.MONGOLAB_URL=process.env.MONGOLAB_URL || "mongodb://kinfen:deadkill@localhost/kadm?authSource=admin";
 
