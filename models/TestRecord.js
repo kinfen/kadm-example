@@ -38,7 +38,18 @@ TestRecord.add({
 			path:true,
 			url:true,
 	}},
+	goodPropertyMarixField:{ label:"GoodPropertyMarixField", type: Types.GoodPropertyMarix},
+	html:{label:'Html', type:Types.Html},
+	key:{label:'Key', type:Types.Key},
+	mailaddress:{label:'MailAddress', type:Types.MailAddress},
+	maplocation:{label:'MapLocation', type:Types.MapLocation},
 
+	moduleselect:{label:'ModuleSelect', type:Types.ModuleSelect},
+
+	username:{label:'Name', type:Types.Name},
+	number:{label:'Number', type:Types.Number},
+	passowrd:{label:'Passowrd', type:Types.Password},
+	qrcode:{label:'QRCode', type:Types.QRCode},
 });
-TestRecord.defaultColumns = 'name, publishedDate|100';
+TestRecord.defaultColumns = 'name, qrcode';
 TestRecord.register();
