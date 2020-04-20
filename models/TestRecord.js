@@ -50,6 +50,20 @@ TestRecord.add({
 	number:{label:'Number', type:Types.Number},
 	passowrd:{label:'Passowrd', type:Types.Password},
 	qrcode:{label:'QRCode', type:Types.QRCode},
+	relationship:{label:'Relationship', type:Types.Relationship, ref:'User'},
+	select:{label:'Select', type:Types.Select, options:[{
+		label:'label1',value:'value1',
+	},{
+		label:'label2',value:'value2'
+	}]},
+	select2:{label:'Select Number', type:Types.Select, numeric:true, options:[{
+		label:'label1',value:1,
+	},{
+		label:'label2',value:2
+	}]},
+	text:{label:'Text', type:Types.Text},
+	textarea:{label:'Textarea', type:Types.Textarea},
+	typevalue:{label:'TypeValue', type:Types.TypeValue},
 });
 TestRecord.defaultColumns = 'name, qrcode';
 TestRecord.register();
