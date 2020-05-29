@@ -7,6 +7,7 @@ kadm-plugin-cms
 kadm-plugin-wxapp/server
 kadm-plugin-wx
 kadm-plugin-mall
+kadm-plugin-design
 "
 CURRENT_PATH=$(pwd)
 

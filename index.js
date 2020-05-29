@@ -5,7 +5,7 @@ var kadmCms = require('@kstudio/kadm-plugin-cms');
 var kadmwxapp = require('@kstudio/kadm-plugin-wxapp');
 var kadmwx = require('@kstudio/kadm-plugin-wx');
 var mall = require('@kstudio/kadm-plugin-mall');
-// var ci = require('@kstudio/kadm-plugin-ci');
+var design = require('@kstudio/kadm-plugin-design');
 var path = require('path');
 module.exports = exports = new function()
 {
@@ -14,7 +14,9 @@ module.exports = exports = new function()
 	// process.env.EMAIL_HOSTNAME="";
 	// process.env.MANDRILL_APIKEY=process.env.MANDRILL_APIKEY||"MJBMvNWAZCSKUNHxHC1vAA";
 	// process.env.MANDRILL_USERNAME=process.env.MANDRILL_USERNAME||"app31974532@heroku.com";
+
 	process.env.NODE_ENV=process.env.NODE_ENV || /* "production" */ "debug" ;
+
 	// process.env.PAPERTRAIL_API_TOKEN = process.env.PAPERTRAIL_API_TOKEN || "yucq0bU4ls8XjzBzPQ2";
 	process.env.MONGOLAB_URL=process.env.MONGOLAB_URL || "mongodb://kinfen:deadkill@localhost/kadm?authSource=admin";
 
@@ -29,6 +31,7 @@ module.exports = exports = new function()
 			kadmwxapp,
 			kadmwx,
 			mall,
+			design,
 		],
 		"site-statics": __dirname + '/public',
 		'session store': process.env.SESSION_STORE,
